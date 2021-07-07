@@ -1,0 +1,6 @@
+<h1>一覧</h1>
+<%= link_to "", new_mc_path, class: "fas fa-plus fa-2x" %>
+<% @mcs.each do |mc| %>
+ <%= mc.item_name %>
+ <%= mc.quantity %>
+<% end %>

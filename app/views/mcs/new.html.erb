@@ -1,0 +1,12 @@
+新規登録
+<%= form_with model:@mc,url: mcs_path, method: :post , local:true do |f| %>
+ <%= f.label "商品名" %>
+ <%= f.text_field :item_name %>
+ <%= f.label "在庫"%>
+ <%= f.text_field :quantity %>
+ <%= f.label "最低個数"%>
+ <%= f.text_field :limit %>
+<%= f.submit "登録"%>
+<% end %>
+
+<%= link_to "一覧画面へ", mcs_path %>

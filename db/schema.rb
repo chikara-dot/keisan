@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_063922) do
+ActiveRecord::Schema.define(version: 2021_07_07_123659) do
 
   create_table "mcs", force: :cascade do |t|
     t.string "item_name"
     t.string "name"
     t.string "quantity"
-    t.string "remaining"
     t.string "limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "consumption"
   end
 
 end
