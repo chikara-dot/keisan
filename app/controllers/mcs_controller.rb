@@ -10,6 +10,13 @@ class McsController < ApplicationController
     redirect_to mcs_path
   end
 
+  def take_out
+    @take = TakeOut.new(take_out_params)
+
+    @take.save
+    redirect_to mcs_path
+  end
+
   def index
     @mcs = Mc.all
   end
@@ -18,9 +25,13 @@ class McsController < ApplicationController
   end
 
   def edit
+    @mc = Mc.find(params[:id])
   end
 
   def update
+    @mc = Mc.find(params[:id])
+    @mc.update(mc_params)
+    redirect_to mcs_path
   end
 
   def destroy
@@ -29,7 +40,11 @@ class McsController < ApplicationController
   private
 
   def mc_params
-    params.require(:mc).permit(:item_name, :name, :quantity, :consumption, :limit)
+    params.require(:mc).permit(:item_name, :quantity, :limit)
+  end
+
+  def take_out_params
+    params.require(:take_out).permit(:name, :take)
   end
 
 end

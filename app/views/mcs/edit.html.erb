@@ -1,0 +1,4 @@
+<%= form_with model:@mc,url: mc_path(@mc), method: :patch, local: true do |f| %>
+ <%= f.text_field :quantity %>
+ <%= f.submit "変更"%>
+<% end %>, 

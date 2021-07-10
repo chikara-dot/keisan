@@ -1,6 +1,16 @@
 <h1>一覧</h1>
 <%= link_to "", new_mc_path, class: "fas fa-plus fa-2x" %>
-<% @mcs.each do |mc| %>
- <%= mc.item_name %>
- <%= mc.quantity %>
-<% end %>
+<div>
+ <% @mcs.each do |mc| %>
+ <div>
+  <%= form_with model:@take,url: take_out_path, local: true do |f| %>
+   <%= f.text_field :name %>
+   <%= f.text_field :take %>
+   <%= f.submit "取り出し"%>
+  <% end %>
+  <%= mc.item_name %>
+  <%= mc.quantity %>
+  <%= link_to "編集", edit_mc_path(mc) %>
+ </div>
+ <% end %>
+</div>

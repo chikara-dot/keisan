@@ -1,0 +1,2 @@
+class TakeOutsController < ApplicationController
+end

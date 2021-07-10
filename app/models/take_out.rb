@@ -1,0 +1,2 @@
+class TakeOut < ApplicationRecord
+end
