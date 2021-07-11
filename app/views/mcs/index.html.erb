@@ -3,7 +3,7 @@
 <div>
  <% @mcs.each do |mc| %>
  <div>
-  <%= form_with model:@take,url: take_out_path, local: true do |f| %>
+  <%= form_with model:@take,url: mc_take_out_path(mc), local: true do |f| %>
    <%= f.text_field :name %>
    <%= f.text_field :take %>
    <%= f.submit "取り出し"%>

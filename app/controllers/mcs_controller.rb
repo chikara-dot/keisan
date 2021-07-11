@@ -12,7 +12,6 @@ class McsController < ApplicationController
 
   def take_out
     @take = TakeOut.new(take_out_params)
-
     @take.save
     redirect_to mcs_path
   end
@@ -44,7 +43,8 @@ class McsController < ApplicationController
   end
 
   def take_out_params
-    params.require(:take_out).permit(:name, :take)
+    params.permit(:name, :take)
   end
 
 end
+
